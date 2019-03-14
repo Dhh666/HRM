@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+    <!--实现c层的反馈功能  根据Action中的方法的返回值(success   error) 决定反馈过程-->
+    <!--访问的后续         相当于在类上声明的RequestMapping("/user")    http://localhost:8080/struts/user/login.action-->
+    <package name="user-module" namespace="/" extends="struts-default">
+        <action name="login" class="com.company.hrm.action.UserAction" method="login">
+        </action>
+        <action name="exist" class="com.company.hrm.action.UserAction" method="exist">
+        </action>
+        <action name="regist" class="com.company.hrm.action.UserAction" method="regist">
+        </action>
+    </package>
+    <package name="emp-module" namespace="/" extends="struts-default">
+        <action name="empfindall" class="com.company.hrm.action.EmpAction" method="empFindAll">
+        </action>
+        <action name="empfindbyname" class="com.company.hrm.action.EmpAction" method="empFindByName">
+        </action>
+        <action name="empfindbyid" class="com.company.hrm.action.EmpAction" method="empFindById">
+        </action>
+        <action name="empsave" class="com.company.hrm.action.EmpAction" method="empSave"></action>
+        <action name="empupdate" class="com.company.hrm.action.EmpAction" method="empUpdate"></action>
+        <action name="empdelete" class="com.company.hrm.action.EmpAction" method="empDelete"></action>
+    </package>
+
+
+</struts>
